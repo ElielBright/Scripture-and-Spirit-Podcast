@@ -50,7 +50,7 @@ header {
     display: flex;
     gap: 1.5rem;
     list-style: none;
-    margin-left: 270px;
+    margin-left: 200px;
     padding: 0;
 }
 .nav-list li a {
@@ -59,6 +59,15 @@ header {
     font-size: 1rem;
     transition: color 0.3s;
 }
+.nav-list li a, .nav-list li Link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  margin-right: 8px;
+}
+
 .nav-list li a:hover {
     color: #d1e8e2;
 }
