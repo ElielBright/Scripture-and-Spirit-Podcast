@@ -69,7 +69,6 @@ header {
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
-  margin-left: 110px;
   transition: transform 0.3s ease; /* Add a transition for smooth animation */
 }
 .bar {
@@ -128,6 +127,14 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    margin-left: 330px; /* Adjusts the toggle button to align right */
+    margin-right: 50px; /* Slightly adjust for mobile view */
+    display: flex;
+
+  }
+}
 /* Menu Toggle Animation */
 .menu-toggle.active .bar:nth-child(1) {
   transform: rotate(45deg) translateY(9.9px);
@@ -453,3 +460,102 @@ footer p {
   }
 }
 
+
+
+/* Prevent Horizontal Scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* General Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust header and navigation */
+  header {
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 80px; /* Reduced logo height for mobile */
+    margin-left: 10px;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Responsive Navigation List */
+  .nav-list {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2a9d8f;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  /* Toggle button adjustments */
+  .menu-toggle {
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  /* Adjust sections for mobile */
+  section, #episodes, #about, #contact, .donation-section {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  /* Footer Adjustments */
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive footer icons */
+  .social-icons {
+    gap: 0.5rem;
+  }
+}
+
+/* Additional Media Queries for Smaller Screens */
+@media (max-width: 480px) {
+  .logo img {
+    height: 60px;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .nav-list {
+    width: 100vw;
+  }
+
+  .donation-section, form, #about p {
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    margin-right: 0.5rem;
+  }
+
+  .dark-mode-toggle {
+    right: 0.5rem;
+  }
+}
